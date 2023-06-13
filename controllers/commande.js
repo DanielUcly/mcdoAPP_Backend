@@ -60,7 +60,7 @@ const updateCommandePrete = async (req, res) => {
   try {
     const commande = await Commande.findById(req.params.id);
 
-    commande.commandePrete = req.body.commandePrete;
+    commande.commandePrete = true;
 
     commande.save();
 

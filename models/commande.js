@@ -9,7 +9,6 @@ const CommandeSchema = new Schema({
   },
   date: {
     type: Date,
-    required: true,
     default: Date.now(),
   },
   produits: [
@@ -20,6 +19,10 @@ const CommandeSchema = new Schema({
     },
   ],
   commandePrete: {
+    type: Boolean,
+    default: false,
+  },
+  commandeServie: {
     type: Boolean,
     default: false,
   },
