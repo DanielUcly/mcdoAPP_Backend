@@ -3,6 +3,9 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const CompteController = require("./controllers/compte");
 const ProduitController = require("./controllers/produit");
+const BoissonsController = require("./controllers/boisson");
+const AccompagnementsController = require("./controllers/accompagnement");
+const CommandeController = require("./controllers/commande");
 require("dotenv").config();
 
 const app = express();
@@ -29,6 +32,36 @@ app.get("/produit/:id", ProduitController.get);
 app.post("/produit/new", ProduitController.add);
 app.put("/produit/:id", ProduitController.update);
 app.delete("/produit/:id", ProduitController.del);
+
+//BOISSONS
+app.get("/boissons", BoissonsController.get);
+app.get("/boisson/:id", BoissonsController.get);
+app.post("/boisson/new", BoissonsController.add);
+app.put("/boisson/:id", BoissonsController.update);
+app.delete("/boisson/:id", BoissonsController.del);
+
+//ACCOMPAGNEMENTS
+app.get("/accompagnements", AccompagnementsController.get);
+app.get("/accompagnement/:id", AccompagnementsController.get);
+app.post("/accompagnement/new", AccompagnementsController.add);
+app.put("/accompagnement/:id", AccompagnementsController.update);
+app.delete("/accompagnement/:id", AccompagnementsController.del);
+
+//COMMANDES
+app.get("/commandes", CommandeController.get);
+app.get("/commande/:id", CommandeController.get);
+app.get(
+  "/commande/verifierUtilisateur/:id",
+  CommandeController.verifierUtilisateur
+);
+app.post("/commande/new", CommandeController.add);
+app.put("/commande/:id", CommandeController.update);
+app.put("/commande/commandeprete/:id", CommandeController.updateCommandePrete);
+app.put(
+  "/commande/commandeservie/:id",
+  CommandeController.updateCommandeServie
+);
+app.delete("/commande/:id", CommandeController.del);
 
 app.listen(process.env.MONGO_PORT, () => {
   console.log(`Server Started at ${process.env.MONGO_PORT}`);

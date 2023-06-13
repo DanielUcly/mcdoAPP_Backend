@@ -7,6 +7,9 @@ const add = async (req, res) => {
       description: req.body.description,
       prix: req.body.prix,
       image: req.body.image,
+      isProduit: req.body.isProduit,
+      isBoisson: req.body.isBoisson,
+      isAccompagnement: req.body.isAccompagnement,
     });
 
     produit.save();
@@ -42,6 +45,9 @@ const update = async (req, res) => {
     produit.description = req.body.description;
     produit.prix = req.body.prix;
     produit.image = req.body.image;
+    produit.isProduit = req.body.isProduit;
+    produit.isBoisson = req.body.isBoisson;
+    produit.isAccompagnement = req.body.isAccompagnement;
 
     produit.save();
 

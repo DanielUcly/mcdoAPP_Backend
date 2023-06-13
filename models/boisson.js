@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const AccompagnementSchema = new Schema({
+const BoissonSchema = new Schema({
   nom: {
     type: String,
     required: true,
@@ -20,9 +20,6 @@ const AccompagnementSchema = new Schema({
   },
 });
 
-const Accompagnement = mongoose.model(
-  "AccompagnementSchema",
-  AccompagnementSchema
-);
+const Boisson = mongoose.model("BoissonSchema", BoissonSchema);
 
-module.exports = Accompagnement;
+module.exports = Boisson;

@@ -18,6 +18,21 @@ const ProduitSchema = new Schema({
     type: String,
     required: true,
   },
+  isProduit: {
+    type: Boolean,
+    required: true,
+    default: true,
+  },
+  isBoisson: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+  isAccompagnement: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
 });
 
 const Produit = mongoose.model("Produit", ProduitSchema);
