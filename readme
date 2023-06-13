@@ -1,1 +1,2 @@
-Il faut faire npm i
+Il faut faire npm i pour installer tous les packets
+Puis pour lancer la bdd il faut faire npm start
